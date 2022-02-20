@@ -4,19 +4,40 @@ import java.util.List;
 import java.util.Map;
 
 public class Elevator {
-    private Map<Integer, String> floors;
+    private List<Tenant> tenants;
+    private int maxFloor;
 
-    public Elevator() {
-        this.floors = new HashMap<>();
+    public Elevator(int maxFloor) {
+        this.maxFloor = maxFloor;
+        this.tenants = new ArrayList<>();
     }
 
-    public void addFloorPlan(Integer newFloor, String description) {
-        if (floors.containsKey(newFloor)) {
-            System.out.printf("This floor is already in the system: %s\n", newFloor);
+    public void addTenant(Tenant tenantToAdd) {
+        if (tenants.contains(tenantToAdd)) {
+            System.out.println("This person is already in the system.");
         }else {
-            floors.put(newFloor, description);
-            System.out.printf("You have added level #%s to the floorplan\n", newFloor);
+            tenants.add(tenantToAdd);
         }
     }
 
+    public boolean checkForTenant(String newTenant) {
+        if(tenants.isEmpty()) return false;
+        for(Tenant personToCheck : tenants) {
+            if (personToCheck.getName().toLowerCase().equals(newTenant.toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Tenant returnTenant(String tenantName) {
+        if (checkForTenant(tenantName)) {
+            for(Tenant tenantCheck : tenants) {
+                if (tenantCheck.getName().toLowerCase().equals(tenantName.toLowerCase())) return tenantCheck;
+            }
+        } else {
+            System.out.println("This tenant is not in the system.");
+        }
+        return null;
+    }
 }

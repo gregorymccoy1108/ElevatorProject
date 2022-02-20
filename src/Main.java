@@ -3,52 +3,90 @@ import java.util.Scanner;
 public class Main {
 
     private static Scanner keyboard = new Scanner(System.in);
-    private static Elevator hamptonSouthTampa = new Elevator();
+    private static Elevator theElementTampa = new Elevator(30);
 
     public static void main(String[] args) {
 	    /*
-	        This will be a test application that will replicate an elevator. We will add levels and each level
-	        will contain certain information and will be displayed once that level is travelled to.
+	        This will be a test application that will replicate an elevator in a condo. It will add tenants and check
+	        if they have access to a floor before trying to go to that floor.
 	     */
+        int input = 0;
 
         while(true) {
             showMenu();
-            int selection = keyboard.nextInt();
-
-            switch(selection) {
+            input = keyboard.nextInt();
+            switch(input) {
                 case 1:
-                    addFloorLevel();
+                    addTenant();
                     break;
                 case 2:
-                    System.out.println("Delete a floor from the menu");
+                    removeTenant();
                     break;
                 case 3:
-                    System.out.println("Travel to a floor");
+                    goToFloor();
                     break;
                 case 4:
-                    System.out.println("Exiting the menu!");
+                    exitMenu();
                     return;
             }
         }
+
     }
 
     public static void showMenu() {
         System.out.println("********************************");
         System.out.println("Welcome to the elevator menu!" );
         System.out.println("Please select from the following menu: ");
-        System.out.println("1) Create a new floor for the elevator");
-        System.out.println("2) Delete a floor from the elevator");
-        System.out.println("3) Travel to a floor");
-        System.out.println("4) exit the menu");
+        System.out.println("1) Add a new tenant to the system");
+        System.out.println("2) Delete a tenant from the system");
+        System.out.println("3) Allow a tenant to select a floor");
+        System.out.println("4) Exit the menu");
         System.out.print("Input: ");
     }
 
-    public static void addFloorLevel() {
-        System.out.print("What is the level you would like to add?: ");
-        int newLevel = keyboard.nextInt();
+    public static void addTenant() {
         keyboard.nextLine();
-        System.out.print("What is a description of the new level: ");
-        String description = keyboard.nextLine();
-        hamptonSouthTampa.addFloorPlan(newLevel, description);
+        System.out.print("What is the name of the new Tenant: ");
+        String name = keyboard.nextLine();
+        if(theElementTampa.checkForTenant(name)) {
+            System.out.println("This tenant is already in the system");
+        }else {
+            System.out.print("What is the unit number: ");
+            int unitNumber = keyboard.nextInt();
+            System.out.print("What floor is the unit on: ");
+            int floor = keyboard.nextInt();
+            System.out.print("What is the rent for this unit: ");
+            int rentAmount = keyboard.nextInt();
+            theElementTampa.addTenant(new Tenant(name, unitNumber, rentAmount, floor));
+        }
+
     }
+
+    public static void removeTenant() {
+
+    }
+
+    public static void goToFloor() {
+        keyboard.nextLine();
+        System.out.print("What is the name of the tenant: ");
+        String name = keyboard.nextLine();
+        if(theElementTampa.checkForTenant(name)) {
+            System.out.print("What floor would you like to go to: ");
+            int floorToGo = keyboard.nextInt();
+            if(theElementTampa.returnTenant(name).haveFloorAccess(floorToGo)) {
+                System.out.printf("%s is now on floor %s\n", name, floorToGo);
+            }else {
+                System.out.println("You do not have access to go to that floor");
+            }
+        }else {
+            System.out.println("This tenant is not in the system. Please check the spelling (case sensitive)");
+        }
+    }
+
+    public static void exitMenu() {
+        System.out.println("****************************************************");
+        System.out.println("Thank you for using the elevator management system!");
+        System.out.println("****************************************************");
+    }
+
 }
