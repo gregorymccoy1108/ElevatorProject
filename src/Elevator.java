@@ -1,24 +1,22 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Elevator {
-    private List<FloorLevel> floors;
-    private int currentLevel;
+    private Map<Integer, String> floors;
 
     public Elevator() {
-        this.floors = new ArrayList<>();
+        this.floors = new HashMap<>();
     }
 
-    public void addFloorPlan(FloorLevel newFloor) {
-        floors.add(newFloor);
-        System.out.printf("You have added floor #%s to the elevators levels\n", newFloor.getFloorLevel());
-    }
-
-    public void changeLevel(FloorLevel newLevel) {
-        if (floors.contains(newLevel)) {
-            System.out.printf("You have travelled to level #%s", newLevel.getFloorLevel());
+    public void addFloorPlan(Integer newFloor, String description) {
+        if (floors.containsKey(newFloor)) {
+            System.out.printf("This floor is already in the system: %s\n", newFloor);
         }else {
-            System.out.println("This level does not exist. Please input a correct level to travel to.");
+            floors.put(newFloor, description);
+            System.out.printf("You have added level #%s to the floorplan\n", newFloor);
         }
     }
+
 }
