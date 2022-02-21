@@ -20,6 +20,11 @@ public class Elevator {
         }
     }
 
+    public void removeTenant(String tenantName) {
+        tenants.remove(returnTenant(tenantName));
+        System.out.printf("%s has been removed from the system", tenantName);
+    }
+
     public boolean checkForTenant(String newTenant) {
         if(tenants.isEmpty()) return false;
         for(Tenant personToCheck : tenants) {
