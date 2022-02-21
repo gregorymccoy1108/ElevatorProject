@@ -17,12 +17,16 @@ public class Tenant {
         floorAccess.put(floor, true);
     }
 
-    public void getRentAmount() {
-        System.out.printf("The cost of rent for %s is $%s per month", name, rentAmount);
+    public int getRentAmount() {
+        return rentAmount;
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getFloor() {
+        return floor;
     }
 
     public boolean haveFloorAccess(int floorToCheck) {

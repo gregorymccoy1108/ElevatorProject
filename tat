@@ -1,0 +1,35 @@
+[33mcommit 2a9989d2c0965fd1e4f036a759975260e415d3ea[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Gregory McCoy <gregorymccoy1108@gmail.com>
+Date:   Sun Feb 20 19:51:44 2022 -0500
+
+    Added ability to remove tenant
+
+[33mcommit 4a5cb5624843a70329788f0a52fa3095a3bd5e74[m
+Author: Gregory McCoy <82065203+gregorymccoy1108@users.noreply.github.com>
+Date:   Sun Feb 20 18:08:43 2022 -0500
+
+    Update README.md
+
+[33mcommit 10eeac9242dd5d30fc6dbcf21519719eb17a2f91[m
+Author: Gregory McCoy <gregorymccoy1108@gmail.com>
+Date:   Sun Feb 20 17:52:02 2022 -0500
+
+    Added the ability to create tenants
+
+[33mcommit d3c82603b5c50d5bc2cb6814efd55c53198c5e95[m
+Author: Gregory McCoy <gregorymccoy1108@gmail.com>
+Date:   Sun Feb 20 12:28:01 2022 -0500
+
+    Worked on base Elevator class
+
+[33mcommit d9c329874ca637533ceb5def51a9859c0e3686f6[m
+Author: Gregory McCoy <gregorymccoy1108@gmail.com>
+Date:   Sun Feb 20 11:52:26 2022 -0500
+
+    testing commit
+
+[33mcommit 76c5c58bf4cf0b736a63f625e504c9204fee7497[m
+Author: Gregory McCoy <gregorymccoy1108@gmail.com>
+Date:   Sun Feb 20 11:51:26 2022 -0500
+
+    First commit

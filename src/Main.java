@@ -28,7 +28,7 @@ public class Main {
                         goToFloor();
                         break;
                     case 4:
-                        listTenants();
+                        theElementTampa.listTenants();
                         break;
                     case 5:
                         exitMenu();
@@ -103,7 +103,7 @@ public class Main {
     }
 
     public static void listTenants() {
-        
+
     }
 
     public static void exitMenu() {

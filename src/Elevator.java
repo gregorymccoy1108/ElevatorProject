@@ -22,7 +22,7 @@ public class Elevator {
 
     public void removeTenant(String tenantName) {
         tenants.remove(returnTenant(tenantName));
-        System.out.printf("%s has been removed from the system", tenantName);
+        System.out.printf("%s has been evicted from the building\n", tenantName);
     }
 
     public boolean checkForTenant(String newTenant) {
@@ -44,5 +44,11 @@ public class Elevator {
             System.out.println("This tenant is not in the system.");
         }
         return null;
+    }
+
+    public void listTenants() {
+        for(Tenant tenant : tenants) {
+            System.out.printf("%s, lives on floor %s and pays $%s per month\n", tenant.getName(), tenant.getFloor(), tenant.getRentAmount());
+        }
     }
 }
