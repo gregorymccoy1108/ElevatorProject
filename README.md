@@ -1,8 +1,15 @@
 # ElevatorProject
-This project is meant to simulate the elevator management of a condo/highrise.
 
-The system will allow for the creation of a Tenant which includes name, unit number, floor and cost of rent. 
-The system will allow the movement of Tenants to the floors which they are granted permission to be on. 
-The tenants will be allowed to travel to the floor which their unit is on, they will be denied to all other floors. 
+> This application is a basic management for an elevator inside of a hotel / condo building. The user will be allowed to create "Tenants" and will be   asked to input information for each tenant. Name, Unit number, Floor and Rent will be input for each tenant and will be stored in the Elevator         object. From there the user will be allowed to send the Tenants to floors on the hotel / condo, but only to the ones that the tenants are given       access to. The floor that the tenant is allowed to travel to is the one that was stated when creating the tenant. If the user trys to move the         tenant to a floor they do not have access to they will be denied! 
 
-More implementation will be added in the future. 
+## Quick Start
+
+1. Clone or download the repo
+2. Open the project in your preferred IDE
+3. Open the Main.java file and examine the code prior to running
+4. Once the program is started the menu will display on the command line. 
+
+
+Please feel free to contribute and reach out if any errors occur!
+
+-Gregory McCoy
