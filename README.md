@@ -7,7 +7,7 @@
 1. Clone or download the repo
 2. Open the project in your preferred IDE
 3. Open the Main.java file and examine the code prior to running
-4. Once the program is started the menu will display on the command line. 
+4. Once the program is started the menu will display on the command line
 
 
 Please feel free to contribute and reach out if any errors occur!
