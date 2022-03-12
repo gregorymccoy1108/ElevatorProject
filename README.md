@@ -10,6 +10,6 @@
 4. Once the program is started the menu will display on the command line
 
 
-Please feel free to contribute and reach out if any errors occur!
+Please feel free to contribute and reach out if any errors occur.
 
 -Gregory McCoy
